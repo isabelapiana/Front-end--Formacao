@@ -4,6 +4,8 @@
 @import url("./topicos.css");
 @import url("./contato.css");
 @import url("./rodape.css");
+@import url("./cadastro.css");
+@import url("./formulario.css");
 
 :root {
     --cor-de-fundo: #EBECEE;
