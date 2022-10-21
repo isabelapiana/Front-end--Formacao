@@ -8,9 +8,8 @@ export abstract class View<T> {
         if (elemento) {
             this.elemento = elemento as HTMLElement;
         } else {
-            throw Error(`Seletor ${seletor} não existe, verifique no DOM!`)
+            throw Error(`Seletor ${seletor} não existe no DOM. Verifique`);
         }
-        this.elemento = document.querySelector(seletor);
         if (escapar) {
             this.escapar = escapar;
         }
