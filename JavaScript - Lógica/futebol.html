@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futebol</title>
+</head>
+<script>
+    function pulaLinha() {
+      document.write("<br>");
+    }
+
+    function mostra(elemento) {
+      document.write(elemento);
+    }
+
+    var vitorias = prompt("Digite o número de vitórias:");
+    var empates = prompt("Digite o número de empates:");
+
+    var pontos = (parseInt(vitorias) * 3) + parseInt(empates);
+
+    mostra("Total de pontos: " + pontos);
+
+    //Supondo que no ano passado o total de pontos tenha sido 28, queremos que ele seja capaz de informar se o time está pior ou melhor em relação ao ano anterior.
+
+    if (pontos < 28 ) {
+        mostra("<br>Seu time está pior que o ano passado.")
+    } else if (pontos === 28 ) {
+        mostra("<br>Seu time está igual ao ano passado.") 
+    } else {
+        mostra("<br>Seu time está melhor que o ano passado.")
+    }
+
+</script>
+<body>
+    
+</body>
+</html>

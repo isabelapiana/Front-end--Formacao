@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IMC</title>
+  </head>
+  <script>
+
+    function pulaLinha() {
+      document.write("<br>");
+    }
+
+    function mostra(elemento) {
+      document.write(elemento);
+    }
+
+    function calculaImc(peso, altura) {
+        var imcTotal = peso / (altura * altura);
+        var imc = imcTotal.toFixed(2);
+        return imc;
+    }
+
+    function somaImc (imc1, imc2) {
+        somaImc = imc1 + imc2;
+        return somaImc;
+    }
+
+    mostra("Meu IMC é " + calculaImc(60, 1.63))
+    pulaLinha();
+    mostra("A soma do IMC da Ana e do José é " + somaImc(22.5, 28))
+
+    var altura = prompt("Informe a sua altura");
+    var peso = prompt("Informe o seu peso");
+    var imcUsuario = peso / (altura * altura);
+
+    mostra("<br> Seu IMC é: " + imcUsuario.toFixed(2));
+
+    if (imcUsuario < 18.5) {
+        mostra("<br>Seu IMC está baixo.")
+    } else if ( imcUsuario >= 18.5 && imcUsuario <= 35) {
+        mostra("<br>Seu IMC está ideal.")
+    } else {
+        mostra("<br>Seu IMC está alto.")
+    }
+
+  </script>
+  <body></body>
+</html>
