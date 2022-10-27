@@ -1,0 +1,28 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+  var tela = document.querySelector("canvas");
+  var pincel = tela.getContext("2d");
+
+  function desenhaQuadrado(cor, x, y, w, h) {
+    pincel.fillStyle = cor;
+    pincel.fillRect(x, y, w, h);
+    pincel.fillStroke = "black"; //fazer borda preta
+    pincel.strokeRect(x, y, w, h); //dimensões da borda
+  }
+
+  /* Desenhar vários quadrados repetidamente com while
+  var x = 0;
+  while (x < 600) {
+    desenhaQuadrado("#cdcdcd", x, 0, 50, 50);
+    desenhaQuadrado("lightblue", x, 50, 50, 50);
+    x = x + 50;
+  }
+  */
+
+ // Fazendo a mesma coisa com For
+ for (var x = 0; x < 600; x + 50) {
+    desenhaQuadrado("#cdcdcd", x, 0, 50, 50);
+    desenhaQuadrado("lightblue", x, 50, 50, 50);
+ }
+</script>

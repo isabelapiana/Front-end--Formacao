@@ -1,0 +1,22 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+  var tela = document.querySelector("canvas");
+  var pincel = tela.getContext("2d");
+
+  pincel.fillStyle = "#cdcdcd";
+  pincel.fillRect(0, 0, 600, 400);
+
+  function desenhaCirculo(evento) {
+    var x = evento.pageX - tela.offsetLeft; //Mostra eixo X ao clicar e subtrai da pequena margem à esquerda que o navegador traz por default
+    var y = evento.pageY - tela.offsetTop; //Mostra eixo Y e subtrai da margem ao topo
+    //Fazer círculo azul onde clicar:
+    pincel.fillStyle = "darkred"; //Definir cor
+    pincel.beginPath(); //Começar a riscar o caminho
+    pincel.arc(x, y, 10, 0, 2 * 3.14); //Coordenadas x e y do clique, raio, ângulos
+    pincel.fill();
+    console.log(x + ", " + y); //Mostra onde estão as coordenadas
+  }
+
+  tela.onclick = desenhaCirculo;
+</script>

@@ -7,20 +7,34 @@
     <title>Lógica | JS</title>
   </head>
   <body>
+    <canvas width="600" height="400"></canvas>
+
     <script>
-      var ano = 2022;
+      var tela = document.querySelector("canvas"); //Usar tela de desenho - Canvas
+      var pincel = tela.getContext("2d"); //Desenhar em 2d
 
-      function pulaLinha() {
-        document.write("<br>");
-      }
+      pincel.fillStyle = "#cdcdcd"; // FillStyle deve vir antes das outras coordenadas
+      pincel.fillRect(0, 0, 600, 400); //Retângulo, eixo X 0, eixo Y 0, width 600, heigh 400
 
-      function mostra(elemento) {
-        document.write(elemento);
-      }
+      pincel.fillStyle = "green";
+      pincel.fillRect(0, 0, 200, 400);
 
-      mostra("Idade: " + (ano - 1995));
-      pulaLinha();
-      mostra("Texto2");
+      pincel.fillStyle = "red";
+      pincel.fillRect(400, 0, 200, 400);
+
+      //Triângulo
+      pincel.fillStyle = "yellow";
+      pincel.beginPath(); //Para começar a riscar o caminho desejado
+      pincel.moveTo(300, 200); //Ponto de partida (X, Y)
+      pincel.lineTo(200, 400); //Destino (X, Y)
+      pincel.lineTo(400, 400); //Destino (X, Y)
+      pincel.fill(); //Preencher
+
+      //Círculo
+      pincel.fillStyle = "blue";
+      pincel.beginPath();
+      pincel.arc(300, 200, 50, 0, 2 * 3.14); //(X, Y, raio, ângulo inicial, ângulo final)
+      pincel.fill();
     </script>
   </body>
 </html>
